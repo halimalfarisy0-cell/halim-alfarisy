@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    Halim Alfarisy Pratama Register
+</head>
+<body>
+    <form class="" action="">
+        <!--
+        nama
+        email
+        password
+        no hp
+        tanggal lahir-->
+
+
+        <input type="text" name="" id="" value="" placeholder="Nama lengkap"/><br>
+        <input type="email" name="" id="" value="" placeholder="Email"/><br>
+        <input type="password" name="" id="" value=""/><br>
+        <input type="number" name="" id="" value="" placeholder="nomor hp"/><br>
+        <input type="date" name="" id="" value="" placeholder="tanggal lahir"/><br>
+        <button type="submit">submit</button>
+    </form>
+  
+</body>
+</html>
