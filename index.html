@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Form Registrasi</title>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#1f2633;
+      --muted:#6b7280;
+      --primary:#2563eb;
+      --primary-2:#1e40af;
+      --border:#e5e7eb;
+      --ring:#93c5fd;
+      --shadow: 0 6px 24px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.04);
+      --radius:14px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    /* NAV */
+    .nav{
+      padding:16px 20px;
+    }
+    .nav ul{
+      display:flex;
+      gap:16px;
+      margin:0;
+      padding-left:18px;      /* meniru bullet ala screenshot */
+      list-style:disc;
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--primary);
+    }
+    .nav a:hover{ text-decoration:underline }
+
+    /* WRAPPER */
+    .wrap{
+      max-width:960px;
+      margin:12px auto 56px;
+      padding:0 16px;
+    }
+
+    /* KARTU FORM */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .title{
+      margin:0 0 14px;
+      font-size:28px;
+      line-height:1.2;
+    }
+    .subtle{ color:var(--muted); font-size:.95rem }
+
+    form{
+      margin-top:10px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+
+    /* grid 2 kolom untuk layar lebar */
+    @media (min-width:720px){
+      form{ grid-template-columns: 1fr 1fr; }
+      .full{ grid-column: 1 / -1 }
+    }
+
+    label{
+      display:block;
+      font-weight:600;
+      margin-bottom:6px;
+      font-size:.95rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="tel"]{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:10px 12px;
+      font-size:16px;
+      background:#fff;
+      outline:none;
+      transition:border-color .15s, box-shadow .15s;
+    }
+    input:focus{
+      border-color:var(--ring);
+      box-shadow:0 0 0 4px rgba(147,197,253,.35);
+    }
+
+    .radio-group{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:6px 0;
+    }
+    .actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .btn{
+      appearance:none;
+      border:0;
+      background:var(--primary);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:700;
+      cursor:pointer;
+      transition: transform .05s ease, background .15s ease;
+    }
+    .btn:active{ transform: translateY(1px) }
+    .btn:hover{ background:var(--primary-2) }
+
+    /* TABLE */
+    .table-wrap{
+      margin-top:18px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+    }
+    thead th{
+      text-align:left;
+      font-weight:700;
+      background:#f3f4f6;
+      border-bottom:1px solid var(--border);
+      padding:10px 12px;
+    }
+    tbody td{
+      padding:10px 12px;
+      border-top:1px solid var(--border);
+    }
+    tbody tr:nth-child(odd){ background:#fafafa }
+
+    /* SECTION KONTAK */
+    .contact{
+      margin-top:20px;
+      padding:18px;
+      border:1px dashed var(--border);
+      border-radius:12px;
+      background:#fafcff;
+    }
+    .contact h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+
+    /* FOOTER */
+    footer{
+      margin-top:28px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasi sederhana (sesuai foto ada bullet) -->
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Registrasi</a></li>
+      <li><a href="#">Data</a></li>
+      <li><a href="#">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main class="wrap">
+    <section class="card">
+      <h1 class="title">Form Registrasi</h1>
+      <p class="subtle">Isi data berikut dengan benar.</p>
+
+      <form>
+        <div>
+          <label for="nama">Nama Lengkap</label>
+          <input id="nama" type="text" placeholder="Nama lengkap">
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="nama@email.com">
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="••••••••">
+        </div>
+
+        <div>
+          <label for="hp">Nomor HP</label>
+          <input id="hp" type="tel" placeholder="0812•••••••">
+        </div>
+
+        <div>
+          <label for="tgl">Tanggal Lahir</label>
+          <input id="tgl" type="date">
+        </div>
+
+        <div class="full">
+          <label>Jenis Kelamin</label>
+          <div class="radio-group">
+            <label><input type="radio" name="jk" value="Laki-laki"> Laki-laki</label>
+            <label><input type="radio" name="jk" value="Perempuan"> Perempuan</label>
+          </div>
+        </div>
+
+        <div class="actions full">
+          <button class="btn" type="submit">Submit</button>
+          <span class="subtle">Semua kolom wajib diisi.</span>
+        </div>
+      </form>
+
+      <div class="table-wrap">
+        <table aria-label="Data pendaftar">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Email</th>
+              <th>Tanggal Lahir</th>
+              <th>Jenis Kelamin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="contact">
+        <h3>Kontak Kami:</h3>
+        <p>Email: <a href="mailto:arkana@gmail.com">arkana@gmail.com</a><br>
+           Telp: 08123456789</p>
+      </div>
+
+      <footer>© 2025 by arkana</footer>
+    </section>
+  </main>
+</body>
+</html>
